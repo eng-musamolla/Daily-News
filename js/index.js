@@ -24,20 +24,27 @@ const Catagory = (datas) => {
         catagory.appendChild(ul);
     })
     loader(false);
+    
 }
 
 // detail catagory function
 const detailCatagory = async (id) => {
     loader(true);
     try {
-        const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+        const url = `https://openapi.programming-hero.com/api/news/category/${ id }`;
         const res = await fetch(url);
         const data = await res.json();
         const className = document.getElementById(id);
         const catagory = document.getElementById('catagoryNumber');
         const catagoryName = document.getElementById(id).innerText;
-        catagory.innerText = data.data.length + ' items found for category ' + catagoryName;
+        
+        if (data.data.length > 0) {
+            catagory.innerText = data.data.length + ' items found for category ' + catagoryName;
+        } else {
+            catagory.innerText = 'No item found for category ' + catagoryName;
+        }
         displayNews(data.data);
+        // console.log(catagoryName);
     } catch (error) {
         console.log(error);
     }
@@ -92,7 +99,7 @@ const displayNews = (news) => {
                 <div class="col-sm-12 col-md-12 col-lg-9">
                     <div class="card-body">
                         <h5 class="card-title mt-2">${ news.title }  </h5>
-                        <p class="card-text my-4">${detail}...</p>
+                        <p class="card-text my-4">${ detail }...</p>
                         <div class="d-flex gap-4 align-items-center justify-content-between">
                         
                         
@@ -101,8 +108,8 @@ const displayNews = (news) => {
                                 <img src="${ news.author.img }" class="rounded-circle img-fluid "
                                     style="max-width: 50px;" alt="player-1">
                                 <div>
-                                    <h6 class="m-0">${ news.author.name }</h6>
-                                    <p class="d-none d-md-block d-lg-block d-xl-block d-xxl-block m-0">${ news.author.published_date }</p>
+                                    <h6 class="m-0">${news.author.name == null || news.author.name == "" ? "Data not found!!" : news.author.name}</h6>
+                                    <p class="d-none d-md-block d-lg-block d-xl-block d-xxl-block m-0">${ news.author.published_date == null ? "Data not found!!":  news.author.published_date }</p>
                                 </div>
                             </div>
                             
@@ -112,7 +119,7 @@ const displayNews = (news) => {
                             <!-- user views start -->
                             <div class="d-flex align-items-center gap-3 ">
                                 <i class="fa-regular fa-eye"></i>
-                                <p class="m-0  fw-semibold">${ news.total_view }</p>
+                                <p class="m-0  fw-semibold">${ news.total_view == null ? "Data not found!!" : news.total_view }</p>
                             </div>
                             <!-- user views end -->
                             
@@ -164,7 +171,7 @@ const displayNews = (news) => {
                 </div>
             </div>
         </div>` 
-
+        
         })
 loader(false);
 }
