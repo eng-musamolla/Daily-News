@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<body>
+    <header class="masthead" style="background-image:url('assets/img/home-bg.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                    <div class="site-heading">
+                        <h1>Interview Question</h1><span class="subheading"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 col-xl-11">
+                <div class="post-preview"><a href="#">
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Var, Let, and Const – What's the Difference?</span></strong><br></h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">A lot of shiny new features came out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript developers have become familiar with and have started using these features.&nbsp;</span><br><br><span style="color: rgb(10, 10, 35);">While this assumption might be partially true, it's still possible that some of these features remain a mystery to some devs.</span><br><br><span style="color: rgb(10, 10, 35);">One of the features that came with ES6 is the addition of&nbsp;let&nbsp;and&nbsp;const, which can be used for variable declaration. The question is, what makes them different from good ol'&nbsp;var&nbsp;which we've been using? If you are still not clear about this, then this article is for you.</span><br><br><span style="color: rgb(10, 10, 35);">In this article, we'll discuss&nbsp;var,&nbsp;let&nbsp;and&nbsp;const&nbsp;&nbsp;with respect to their scope, use, and hoisting. As you read, take note of the differences between them that I'll point out.</span><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Var</span></strong><br></h2>
+                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">Before the advent of ES6,&nbsp;var&nbsp;declarations ruled. There are issues associated with variables declared with&nbsp;var, though. That is why it was necessary for new ways to declare variables to emerge. First, let's get to understand&nbsp;var&nbsp;more before we discuss those issues.</span><br><br><strong><span style="color: var(--gray85);">Scope of var</span><span style="color: rgb(10, 10, 35);">Scope</span></strong><span style="color: rgb(10, 10, 35);">&nbsp;essentially means where these variables are available for use.&nbsp;var&nbsp;declarations are globally scoped or function/locally scoped.The scope is global when a&nbsp;var&nbsp;variable is declared outside a function. This means that any variable that is declared with&nbsp;var&nbsp;outside a function block is available for use in the whole window.var&nbsp;is function scoped when it is declared within a function. This means that it is available and can be accessed only within that function.</span><br><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Let</span></strong><br></h2>
+                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">let&nbsp;is now preferred for variable declaration. It's no surprise as it comes as an improvement to&nbsp;var&nbsp;declarations. It also solves the problem with&nbsp;var&nbsp;that we just covered. Let's consider why this is so.</span><strong><span style="color: var(--gray85);">let is block scoped</span></strong><span style="color: rgb(10, 10, 35);">A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.So a variable declared in a block with&nbsp;let&nbsp;&nbsp;is only available for use within that block. Let me explain this with an example:</span><br><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Const</span></strong><br></h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Variables declared with the&nbsp;const&nbsp;maintain constant values.&nbsp;const&nbsp;declarations share some similarities with&nbsp;let&nbsp;declarations.</span><br><br><strong><span style="color: var(--gray85);">const declarations are block scoped</span></strong><span style="color: rgb(10, 10, 35);">Like&nbsp;let&nbsp;declarations,&nbsp;const&nbsp;declarations can only be accessed within the block they were declared.</span><strong><span style="color: var(--gray85);">const cannot be updated or re-declared</span></strong><span style="color: rgb(10, 10, 35);">This means that the value of a variable declared with&nbsp;const&nbsp;remains the same within its scope. It cannot be updated or re-declared. So if we declare a variable with&nbsp;const, we can neither do this:</span><br><br></h3>
+                    </a></div>
+                <hr>
+                <div class="post-preview"><a href="#"></a></div>
+                <hr>
+                <div class="clearfix"><button class="btn btn-primary float-end" type="button">Older Posts&nbsp;⇒</button></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
+                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
+                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
+                    </ul>
+                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Brand 2022</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
+</body>
+
+</html>

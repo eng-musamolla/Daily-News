@@ -1,10 +1,14 @@
-
+ 
 const loadCatagory = async () => {
-    loader(true);   
-    const url = `https://openapi.programming-hero.com/api/news/categories`;
-    const res = await fetch(url);
-    const data = await res.json();
-    Catagory(data.data.news_category);
+    loader(true);  
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/categories`;
+        const res = await fetch(url);
+        const data = await res.json();
+        Catagory(data.data.news_category);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 
@@ -17,7 +21,6 @@ const Catagory = (datas) => {
         ul.classList.add('navbar-nav');
         ul.innerHTML = `
         <a onclick="detailCatagory(this.id)" id="${data.category_id }" class="nav-link px-0" href="#">${ data.category_name }</a>`
-        
         catagory.appendChild(ul);
     })
     loader(false);
@@ -26,35 +29,42 @@ const Catagory = (datas) => {
 // detail catagory function
 const detailCatagory = async (id) => {
     loader(true);
-    const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    const className = document.getElementById(id);
-    const catagory = document.getElementById('catagoryNumber');
-    const catagoryName = document.getElementById(id).innerText;
-    catagory.innerText = data.data.length + ' items found for category ' + catagoryName;
-    displayNews(data.data);
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const className = document.getElementById(id);
+        const catagory = document.getElementById('catagoryNumber');
+        const catagoryName = document.getElementById(id).innerText;
+        catagory.innerText = data.data.length + ' items found for category ' + catagoryName;
+        displayNews(data.data);
+    } catch (error) {
+        console.log(error);
+    }
 
 }
 
 // News Detals function
 const newsDetals = async (news_id) => {
     loader(true);
-    const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data.data[0]);
-    const modal_title = document.getElementById('modal_title');
-    const modal_body = document.getElementById('modal_body');
-    modal_title.innerText = data.data[0].title;
-    modal_body.innerHTML = `<div class="card p-0">
-            <div class="card-body">
-            <img src="${data.data[0].image_url}" class="card-img-bottom" alt="...">
-                <p class="card-text">${data.data[0].details}</p>
-                <p class="card-text"><small class="text-muted">Last updated ${data.data[0].author.published_date}</small></p>
-            </div>
-        </div>`;
-    loader(false);
+    try {
+        const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const modal_title = document.getElementById('modal_title');
+        const modal_body = document.getElementById('modal_body');
+        modal_title.innerText = data.data[0].title;
+        modal_body.innerHTML = `<div class="card p-0">
+                                    <div class="card-body">
+                                        <img src="${data.data[0].image_url}" class="card-img-bottom" alt="...">
+                                        <p class="card-text">${data.data[0].details}</p>
+                                        <p class="card-text"><small class="text-muted">Last updated ${data.data[0].author.published_date}</small></p>
+                                    </div>
+                                </div>`;
+        loader(false);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 // loader 
@@ -76,10 +86,10 @@ const displayNews = (news) => {
         const detail = details.slice(0, 200);
         newsDiv.innerHTML += ` <div class="card mb-5 p-2 container-lg">
             <div class="row g-0">
-                <div class="col-md-3">
-                    <img src="${ news.thumbnail_url }" class="img-fluid rounded-start" alt="...">
+                <div class="col-sm-12 col-md-12 col-lg-3  ">
+                    <img src="${ news.thumbnail_url }" class="img-fluid w-100 rounded-start" alt="...">
                 </div>
-                <div class="col-md-9">
+                <div class="col-sm-12 col-md-12 col-lg-9">
                     <div class="card-body">
                         <h5 class="card-title mt-2">${ news.title }  </h5>
                         <p class="card-text my-4">${detail}...</p>
@@ -92,7 +102,7 @@ const displayNews = (news) => {
                                     style="max-width: 50px;" alt="player-1">
                                 <div>
                                     <h6 class="m-0">${ news.author.name }</h6>
-                                    <p class="m-0">${ news.author.published_date }</p>
+                                    <p class="d-none d-md-block d-lg-block d-xl-block d-xxl-block m-0">${ news.author.published_date }</p>
                                 </div>
                             </div>
                             
@@ -108,7 +118,7 @@ const displayNews = (news) => {
                             
 
                             <!-- user rating start -->
-                            <div class="d-flex align-items-center gap-3 ">
+                            <div class="d-none d-lg-block d-xl-block d-xxl-block d-flex align-items-center gap-3 ">
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
@@ -130,7 +140,7 @@ const displayNews = (news) => {
                             <!-- Modal -->
                             <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
-                                <div class="modal-fullscreen modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                <div class="modal-fullscreen-sm-down modal-lg modal-xl modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 id="modal_title" class="modal-title" id="exampleModalLabel">Modal title</h5>
