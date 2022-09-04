@@ -30,6 +30,18 @@ const detailCatagory = async (id) => {
     className.classList.add('active');
     displayNews(data.data);
 }
+
+// News Detals function
+const newsDetals = async (news_id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.data[0]);
+
+    const modal_title = document.getElementById('modal_title');   
+    const modal_body = document.getElementById('modal_body');   
+    
+}
     
 const displayNews = (news) => {
     const newsDiv = document.getElementById('news');
@@ -83,17 +95,43 @@ const displayNews = (news) => {
                                                     <!-- user rating end -->
                                                 
                                                 
-                                                    <a href="https://openapi.programming-hero.com/api/news/${news._id}">
-                                                        <i class="fa-solid fa-arrow-right"></i>
 
-                                                    </a>
+                                                    <!-- Button trigger modal -->
+
+                                                    <button onclick="newsDetals('${news._id}')" type="button" class="btn text-primary fw-bold px-5 fs-6" data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal">
+                                                        <i class="fa-solid fa-arrow-right"></i>
+                                                    </button>
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 id="modal_title" class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                                </div>
+                                                                <div id="modal_body" class="modal-body">
+                                                                    ...
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>` 
 
-      })
+    })
     }
 
 
