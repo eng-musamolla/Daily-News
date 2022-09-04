@@ -26,7 +26,8 @@ const detailCatagory = async (id) => {
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     const res = await fetch(url);
     const data = await res.json();
-    
+    const className = document.getElementById(id);
+    className.classList.add('active');
     displayNews(data.data);
 }
     
@@ -82,7 +83,7 @@ const displayNews = (news) => {
                                                     <!-- user rating end -->
                                                 
                                                 
-                                                    <a href="#">
+                                                    <a href="https://openapi.programming-hero.com/api/news/${news._id}">
                                                         <i class="fa-solid fa-arrow-right"></i>
 
                                                     </a>
@@ -101,4 +102,5 @@ const displayNews = (news) => {
 
 
 
- loadCatagory();
+loadCatagory();
+detailCatagory("08");
