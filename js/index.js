@@ -15,8 +15,8 @@ const Catagory = (datas) => {
         const ul = document.createElement('ul');
         ul.classList.add('navbar-nav');
         ul.innerHTML = `
-        <a onclick="detailCatagory(this.id)" id="${data.category_id}" class="nav-link" href="#">${data.category_name}</a>
-        `
+        <a onclick="detailCatagory(this.id)" id="${data.category_id }" class="nav-link px-0" href="#">${ data.category_name }</a>`
+        
         catagory.appendChild(ul);
     })
 }
@@ -28,6 +28,7 @@ const detailCatagory = async (id) => {
     const data = await res.json();
     const className = document.getElementById(id);
     className.classList.add('active');
+    const header = document.getElementsByTagName('header');
     displayNews(data.data);
 }
 
@@ -38,8 +39,16 @@ const newsDetals = async (news_id) => {
     const data = await res.json();
     console.log(data.data[0]);
 
-    const modal_title = document.getElementById('modal_title');   
-    const modal_body = document.getElementById('modal_body');   
+    const modal_title = document.getElementById('modal_title');
+    const modal_body = document.getElementById('modal_body');
+    modal_title.innerText = data.data[0].title;
+    modal_body.innerHTML = `<div class="card p-0">
+            <div class="card-body">
+            <img src="${data.data[0].image_url}" class="card-img-bottom" alt="...">
+                <p class="card-text">${data.data[0].details}</p>
+                <p class="card-text"><small class="text-muted">Last updated ${data.data[0].author.published_date}</small></p>
+            </div>
+        </div>`;
     
 }
     
@@ -50,15 +59,15 @@ const displayNews = (news) => {
         
         const details = news.details;
         const detail = details.slice(0, 200);
-        newsDiv.innerHTML += ` <div class="card mb-5  container-lg">
+        newsDiv.innerHTML += ` <div class="card mb-5 p-2 container-lg">
                                     <div class="row g-0">
                                         <div class="col-md-3">
                                             <img src="${ news.thumbnail_url }" class="img-fluid rounded-start" alt="...">
                                         </div>
                                         <div class="col-md-9">
                                             <div class="card-body">
-                                                <h5 class="card-title">${ news.title }  </h5>
-                                                <p class="card-text">${detail}...</p>
+                                                <h5 class="card-title mt-2">${ news.title }  </h5>
+                                                <p class="card-text my-4">${detail}...</p>
                                                 <div class="d-flex gap-4 align-items-center justify-content-between">
                                                 
                                                 
@@ -106,7 +115,7 @@ const displayNews = (news) => {
                                                     <!-- Modal -->
                                                     <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                                         aria-hidden="true">
-                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                                        <div class="modal-fullscreen modal-dialog modal-dialog-centered modal-dialog-scrollable">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
                                                                     <h5 id="modal_title" class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -141,4 +150,4 @@ const displayNews = (news) => {
 
 
 loadCatagory();
-detailCatagory("08");
+// detailCatagory("08");
