@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
 </head>
 
@@ -28,38 +30,383 @@
         <div class="row">
             <div class="col-md-10 col-lg-8 col-xl-11">
                 <div class="post-preview"><a href="#">
-                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Var, Let, and Const – What's the Difference?</span></strong><br></h2>
-                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">A lot of shiny new features came out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript developers have become familiar with and have started using these features.&nbsp;</span><br><br><span style="color: rgb(10, 10, 35);">While this assumption might be partially true, it's still possible that some of these features remain a mystery to some devs.</span><br><br><span style="color: rgb(10, 10, 35);">One of the features that came with ES6 is the addition of&nbsp;let&nbsp;and&nbsp;const, which can be used for variable declaration. The question is, what makes them different from good ol'&nbsp;var&nbsp;which we've been using? If you are still not clear about this, then this article is for you.</span><br><br><span style="color: rgb(10, 10, 35);">In this article, we'll discuss&nbsp;var,&nbsp;let&nbsp;and&nbsp;const&nbsp;&nbsp;with respect to their scope, use, and hoisting. As you read, take note of the differences between them that I'll point out.</span><br></h3>
-                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Var</span></strong><br></h2>
-                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">Before the advent of ES6,&nbsp;var&nbsp;declarations ruled. There are issues associated with variables declared with&nbsp;var, though. That is why it was necessary for new ways to declare variables to emerge. First, let's get to understand&nbsp;var&nbsp;more before we discuss those issues.</span><br><br><strong><span style="color: var(--gray85);">Scope of var</span><span style="color: rgb(10, 10, 35);">Scope</span></strong><span style="color: rgb(10, 10, 35);">&nbsp;essentially means where these variables are available for use.&nbsp;var&nbsp;declarations are globally scoped or function/locally scoped.The scope is global when a&nbsp;var&nbsp;variable is declared outside a function. This means that any variable that is declared with&nbsp;var&nbsp;outside a function block is available for use in the whole window.var&nbsp;is function scoped when it is declared within a function. This means that it is available and can be accessed only within that function.</span><br><br></h3>
-                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Let</span></strong><br></h2>
-                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">let&nbsp;is now preferred for variable declaration. It's no surprise as it comes as an improvement to&nbsp;var&nbsp;declarations. It also solves the problem with&nbsp;var&nbsp;that we just covered. Let's consider why this is so.</span><strong><span style="color: var(--gray85);">let is block scoped</span></strong><span style="color: rgb(10, 10, 35);">A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.So a variable declared in a block with&nbsp;let&nbsp;&nbsp;is only available for use within that block. Let me explain this with an example:</span><br><br></h3>
-                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Const</span></strong><br></h2>
-                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Variables declared with the&nbsp;const&nbsp;maintain constant values.&nbsp;const&nbsp;declarations share some similarities with&nbsp;let&nbsp;declarations.</span><br><br><strong><span style="color: var(--gray85);">const declarations are block scoped</span></strong><span style="color: rgb(10, 10, 35);">Like&nbsp;let&nbsp;declarations,&nbsp;const&nbsp;declarations can only be accessed within the block they were declared.</span><strong><span style="color: var(--gray85);">const cannot be updated or re-declared</span></strong><span style="color: rgb(10, 10, 35);">This means that the value of a variable declared with&nbsp;const&nbsp;remains the same within its scope. It cannot be updated or re-declared. So if we declare a variable with&nbsp;const, we can neither do this:</span><br><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Var, Let, and Const –
+                                    What's the Difference?</span></strong><br></h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">A lot of shiny new features came
+                                out with ES2015 (ES6). And now, since it's 2020, it's assumed that a lot of JavaScript
+                                developers have become familiar with and have started using these
+                                features.&nbsp;</span><br><br><span style="color: rgb(10, 10, 35);">While this
+                                assumption might be partially true, it's still possible that some of these features
+                                remain a mystery to some devs.</span><br><br><span style="color: rgb(10, 10, 35);">One
+                                of the features that came with ES6 is the addition of&nbsp;let&nbsp;and&nbsp;const,
+                                which can be used for variable declaration. The question is, what makes them different
+                                from good ol'&nbsp;var&nbsp;which we've been using? If you are still not clear about
+                                this, then this article is for you.</span><br><br><span
+                                style="color: rgb(10, 10, 35);">In this article, we'll
+                                discuss&nbsp;var,&nbsp;let&nbsp;and&nbsp;const&nbsp;&nbsp;with respect to their scope,
+                                use, and hoisting. As you read, take note of the differences between them that I'll
+                                point out.</span><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Var</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">Before the advent of
+                                ES6,&nbsp;var&nbsp;declarations ruled. There are issues associated with variables
+                                declared with&nbsp;var, though. That is why it was necessary for new ways to declare
+                                variables to emerge. First, let's get to understand&nbsp;var&nbsp;more before we discuss
+                                those issues.</span><br><br><strong><span style="color: var(--gray85);">Scope of
+                                    var</span><span style="color: rgb(10, 10, 35);">Scope</span></strong><span
+                                style="color: rgb(10, 10, 35);">&nbsp;essentially means where these variables are
+                                available for use.&nbsp;var&nbsp;declarations are globally scoped or function/locally
+                                scoped.The scope is global when a&nbsp;var&nbsp;variable is declared outside a function.
+                                This means that any variable that is declared with&nbsp;var&nbsp;outside a function
+                                block is available for use in the whole window.var&nbsp;is function scoped when it is
+                                declared within a function. This means that it is available and can be accessed only
+                                within that function.</span><br><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Let</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">let&nbsp;is now preferred
+                                for variable declaration. It's no surprise as it comes as an improvement
+                                to&nbsp;var&nbsp;declarations. It also solves the problem with&nbsp;var&nbsp;that we
+                                just covered. Let's consider why this is so.</span><strong><span
+                                    style="color: var(--gray85);">let is block scoped</span></strong><span
+                                style="color: rgb(10, 10, 35);">A block is a chunk of code bounded by {}. A block lives
+                                in curly braces. Anything within curly braces is a block.So a variable declared in a
+                                block with&nbsp;let&nbsp;&nbsp;is only available for use within that block. Let me
+                                explain this with an example:</span><br><br></h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Const</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Variables declared with
+                                the&nbsp;const&nbsp;maintain constant values.&nbsp;const&nbsp;declarations share some
+                                similarities with&nbsp;let&nbsp;declarations.</span><br><br><strong><span
+                                    style="color: var(--gray85);">const declarations are block
+                                    scoped</span></strong><span
+                                style="color: rgb(10, 10, 35);">Like&nbsp;let&nbsp;declarations,&nbsp;const&nbsp;declarations
+                                can only be accessed within the block they were declared.</span><strong><span
+                                    style="color: var(--gray85);">const cannot be updated or
+                                    re-declared</span></strong><span style="color: rgb(10, 10, 35);">This means that the
+                                value of a variable declared with&nbsp;const&nbsp;remains the same within its scope. It
+                                cannot be updated or re-declared. So if we declare a variable with&nbsp;const, we can
+                                neither do this:</span><br><br></h3>
                     </a></div>
                 <hr>
                 <div class="post-preview"><a href="#"></a></div>
                 <hr>
-                <div class="clearfix"><button class="btn btn-primary float-end" type="button">Older Posts&nbsp;⇒</button></div>
+
+            </div>
+
+            <!-- par2  -->
+            <div class="col-md-10 col-lg-8 col-xl-11">
+                <div class="post-preview"><a href="#">
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">The Difference Between
+                                    Regular Functions and Arrow Functions</span></strong><br></h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Arrow function — also called fat
+                                arrow function— is a new feature introduced in ES6 that is a more concise syntax for
+                                writing function expressions. While both regular JavaScript functions and arrow
+                                functions work in a similar manner, there are certain differences between them.</h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">1.
+                                    Syntax</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">he arrow function example
+                                above allows a developer to accomplish the same result with fewer lines of code and
+                                approximately half the typing.
+
+                                Curly brackets aren’t required if only one expression is present. The above example can
+                                also be written like this:
+
+                                let add = (x, y) => x + y;
+                                If there’s only one argument, then the parentheses are not required either:
+
+                                let squareNum = x => x * x;
+                                What if there are no arguments?</h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">2. Arguments
+                                    binding</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">Arrow functions do not have
+                                an arguments binding. However, they have access to the arguments object of the closest
+                                non-arrow parent function. Named and rest parameters are heavily relied upon to capture
+                                the arguments passed to arrow functions.
+
+                                In case of a regular function:
+
+                                let myFunc = {
+                                showArgs(){
+                                console.log(arguments);
+                                }
+                                };
+                                myFunc.showArgs(1, 2, 3, 4);
+
+                                In case of an arrow function:</h3>
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">3. Use of this
+                                    keyword</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Unlike regular functions, arrow
+                                functions do not have their own this. The value of this inside an arrow function remains
+                                the same throughout the lifecycle of the function and is always bound to the value of
+                                this in the closest non-arrow parent function.</h3>
+
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">4. Using new
+                                    keyword</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Regular functions created using
+                                function declarations or expressions are constructible and callable. Since regular
+                                functions are constructible, they can be called using the new keyword.
+
+                                However, the arrow functions are only callable and not constructible, i.e arrow
+                                functions can never be used as constructor functions. Hence, they can never be invoked
+                                with the new keyword.</h3>
+
+                        <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">5. No duplicate named
+                                    parameters</span></strong><br>
+                        </h2>
+                        <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Arrow functions can never have
+                                duplicate named parameters, whether in strict or non-strict mode.
+
+                                It means that the following is valid JavaScript:
+
+                                function add(x, x){}
+                                It is not, however, when using strict mode:
+
+                                'use strict';
+                                function add(x, x){}
+                                // SyntaxError: duplicate formal argument x
+                                With arrow functions, duplicate named arguments are always, regardless of strict or
+                                non-strict mode, invalid.</h3>
+
+                        <hr>
+                        <div class="post-preview"><a href="#"></a></div>
+                        <hr>
+                </div>
+
+
+
+
+
+
+
+                <div class="col-md-10 col-lg-8 col-xl-11">
+                    <div class="post-preview"><a href="#">
+                            <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Why we using template
+                                        string?</span></strong><br></h2>
+                            <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Template strings are a
+                                    powerful feature of modern JavaScript released in ES6. It lets us insert/interpolate
+                                    variables and expressions into strings without needing to concatenate like in older
+                                    versions of JavaScript. It allows us to create strings that are complex and contain
+                                    dynamic elements. Another great thing that comes with template strings are tags.
+                                    Tags are functions that take a string and the decomposed parts of the string as
+                                    parameters and are great for converting strings to different entities.
+
+                                    The syntax for creating template strings is by using backticks to delimit them. For
+                                    example, we can write:
+
+                                    `This is a string`
+                                    This is a very simple example of a template string. All the content is constant and
+                                    there are no variables or expressions in it. To add variables and or expressions to
+                                    a string, we can do the following.</h3>
+                            <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Interpolating Variables
+                                        and Expressions</span></strong><br>
+                            </h2>
+                            <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">We insert a variable or
+                                    expression by adding a dollar sign $ and curly braces {} into the string
+                                    `${variable}`. This is much better than the alternative in old JavaScript where we
+                                    had to concatenate a string like the following:
+
+                                    // Old JS using concatenation
+                                    const oldEnoughToDrink = age >= 21;
+                                    const oldEnough = 'You are ' + (oldEnoughToDrink ? 'old enough' : 'too young') + '
+                                    to drink.'
+                                    As we can see it’s easy to make syntax errors with the old concatenation syntax if
+                                    we have complex variables and expressions. Therefore template strings are a great
+                                    improvement from what we had before.
+
+                                    If we want to use the backtick character in the content of string just put a \
+                                    before the backtick character in the string. => `will have a literal \` back tick`
+                            </h3>
+                            <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Multiline
+                                        Strings</span></strong><br>
+                            </h2>
+                            <h3 class="post-subtitle"><br><span style="color: rgb(10, 10, 35);">Another great feature of
+                                    template strings is that we can have strings with multiple lines for better code
+                                    readability. This cannot be done in an easy way with the old style of strings. With
+                                    the old style of strings, we had to concatenate each line of the string to put long
+                                    strings in multiple lines like the following examples:
+
+                                    const multilineStr = 'This is a very long string' +
+                                    'that spans multiple lines.'
+                                    const multllineStr2 = 'At vero eos et accusamus et iusto odio' + 'dignissimos
+                                    ducimus qui blanditiis praesentium voluptatum ' + 'deleniti atque corrupti quos
+                                    dolores et quas molestias ' + 'excepturi sint occaecati cupiditate non provident, '
+                                    +
+                                    'similique sunt in culpa qui ' +
+                                    'officia deserunt mollitia animi.'
+                                    As we can see, this will become really painful is we have many more lines. It’s very
+                                    frustrating to have all those plus signs and divide the string into multiple lines.
+
+                                    With template strings, we don’t have this problem:
+
+                                    const longString = `At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
+                                    qui officia deserunt mollitia animi.`
+                                    This is much better than concatenating strings together. It takes a lot less time to
+                                    write the code and a lower probability of syntax errors. It’s also much more
+                                    readable.
+
+                                    Note that this method does add an actual new like to the string \n and if you don’t
+                                    want the string to have multiple lines in its final format, just put a \ at the end
+                                    of the line.</h3>
+                            <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Nesting
+                                        Templates</span></strong><br>
+                            </h2>
+                            <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Template strings can be
+                                    nested in each other. This is a great feature because many people want to create
+                                    dynamic strings. Template strings allow us to nest regular strings or template
+                                    strings within template strings. For example, we can write the following:
+
+                                    const oldEnoughToDrink = age >= 21;
+                                    const oldEnough = `You are ${oldEnoughToDrink ? 'old enough' : 'too young'} to
+                                    drink.`
+                                    We can write the same thing with the expression interpolated in the string with
+                                    template strings instead:
+
+                                    const TOO_YOUNG = 'too young';
+                                    const OLD_ENOUGH = 'old enough';
+                                    const oldEnoughToDrink = age >= 21;
+                                    const oldEnough = `You are ${oldEnoughToDrink ? OLD_ENOUGH : TOO_YOUNG} to drink.`
+                                    This case is simple, but with complex string combinations, it is very powerful to be
+                                    able to add logic to how we build our strings.</h3>
+
+                            <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Tagged
+                                        Templates</span></strong><br>
+                            </h2>
+                            <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">With template strings, we
+                                    can add something called tags in front of a template string. They are functions that
+                                    take a string and the decomposed parts of the string as parameters. A tagged
+                                    function decomposes the template string into an array as the first parameter, with
+                                    each item of the array as the constant parts of the string. The additional
+                                    parameters of the function are all the variables and expressions in the order in
+                                    which they appear in the string.
+
+                                    const personOldTag = (strings, nameExp, ageExp, genderExp)=>{
+                                    let str0 = strings[0]; // " is a "
+                                    let str1 = strings[1]; // " year old "
+
+                                    let oldStr;
+                                    if (ageExp > 75){
+                                    oldStr = 'senior';
+                                    } else {
+                                    oldStr = 'young';
+                                    }
+
+                                    // We can even return a string built using a template literal
+                                    return `${nameExp}${str0}${oldStr}${genderExp}.`;
+                                    }
+                                    const name = 'Bob'
+                                    const age = 80;
+                                    const gender = 'male;
+                                    const result = personOldTag`${ name } is a ${ age } year old ${ gender }`;
+                                    // result should be `Bob is a senior man.`
+                                    Tagged templates are great for converting strings to anything you want since it’s
+                                    just a regular function. However, it is a special function because the first
+                                    parameter is an array containing the constant parts of the string. The rest of the
+                                    parameters contain the returned values that each expression returns. This is great
+                                    for manipulating the string and transforming the returned values to what we want.
+
+                                    The return value of tags can be anything you want. So we can return strings, arrays,
+                                    objects, or anything else.
+
+                                    As we see in the function above, in the string that we put beside the personOldTag,
+                                    we first interpolated the name, then the age , then the gender. So in the
+                                    parameters, they also appear in this order — nameExp, ageEx, and genderExp. They are
+                                    the evaluated versions of the name, age, and gender in the template string.
+
+                                    Since tags are functions, we can return anything we want:
+
+                                    const isOldTag = (strings, nameExp, ageExp, genderExp)=>{
+                                    let str0 = strings[0]; // " is a "
+                                    let str1 = strings[1]; // " year old "
+                                    return ageExp > 75
+                                    }
+                                    const name = 'Bob'
+                                    const age = 80;
+                                    const gender = 'male;
+                                    const result = isOldTag`${ name } is a ${ age } year old ${ gender }`;
+                                    // result is true
+                                    As you can see, we can manipulate the data to return a boolean instead of a string.
+                                    Template tags are a feature that’s only available for template strings. To do the
+                                    same thing with the old style of strings, we have to decompose the strings with our
+                                    own string manipulating code and the built-in string manipulation functions, which
+                                    is nowhere near as flexible as using tags. It decomposes the parts of a string into
+                                    arguments for you that get passed in the template tags.</h3>
+
+                            <h2 class="post-title"><strong><span style="color: rgb(10, 10, 35);">Raw
+                                        Strings</span></strong><br>
+                            </h2>
+                            <h3 class="post-subtitle"><span style="color: rgb(10, 10, 35);">Template strings have a
+                                    special raw property that you can get from tags. The raw property gets us the string
+                                    without escaping the special characters, hence the property is called raw. To access
+                                    the raw property of a string, we can follow the example:
+
+                                    const logTag = (strings) => {
+                                    console.log(strings.raw[0]);
+                                    }
+
+                                    logTag`line 1 \r\n line 2`;
+                                    // logs "line 1 \r\n line 2" including characters '\', 'r' and 'n'
+                                    This is handy for visualizing the string as-is with the special characters intact.
+
+                                    There’s also the String.raw tag where we can take a template string and return a
+                                    string with the escape characters without actually escaping them to see the string
+                                    in its full form. For example, with the String.raw tag, we can write:
+
+                                    let hello = String.raw`Hello\n${'world'}!`;
+                                    // "Hi\nworld!"
+
+                                    hello.length;
+                                    // 13
+
+                                    hello.split('').join(',');
+                                    // "H,e,l,l,o,\,n,w,o,r,l,d,!"
+                                    As we can see, we have all the characters of the string with the expressions
+                                    evaluated, but we keep the escape characters as is.</h3>
+
+                            <hr>
+                            <div class="post-preview"><a href="#"></a></div>
+                            <hr>
+                            <div class="clearfix"><button class="btn btn-primary float-end" type="button">Older
+                                    Posts&nbsp;⇒</button></div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+            <script src="assets/js/clean-blog.js"></script>
+</body>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item"><a href="https://facebook.com/musamolla3131">
+
+                            <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i
+                                    class="fa fa-facebook fa-stack-1x fa-inverse"></i></span>
+                        </a>
+                    </li>
+
+                    <li class=" list-inline-item">
+                        <a href="https://github.com/musamolla3131">
+                            <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i
+                                    class="fa fa-github fa-stack-1x fa-inverse"></i></span>
+                        </a>
+                    </li>
+                    <p class="my-4 text-muted copyright">Copyright&nbsp;©&nbsp;Brand 2022</p>
+                </ul>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <ul class="list-inline text-center">
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
-                        <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
-                    </ul>
-                    <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Brand 2022</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/clean-blog.js"></script>
-</body>
+</footer>
 
 </html>

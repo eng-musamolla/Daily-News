@@ -167,12 +167,8 @@ const displayNews = (news) => {
 
         })
 loader(false);
-    }
-
-
-
-
-
+}
+    
 
 
 loadCatagory();
